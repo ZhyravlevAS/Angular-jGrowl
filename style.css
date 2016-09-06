@@ -1,0 +1,114 @@
+.jGrowl {
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    z-index: 9999;
+    color: #ffffff;
+    position: fixed;
+}
+
+.jGrowl.top-left {
+    left: 0;
+    top: 0;
+}
+
+.jGrowl.top-right {
+    right: 0;
+    top: 0;
+}
+
+.jGrowl.bottom-left {
+    left: 0;
+    bottom: 0;
+}
+
+.jGrowl.bottom-right {
+    right: 0;
+    bottom: 0;
+}
+
+.jGrowl.center {
+    top: 0;
+    width: 50%;
+    left: 25%;
+}
+
+.jGrowl.center .jGrowl-notification,
+.jGrowl.center .jGrowl-closer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.jGrowl-notification {
+    background: #000000;
+    opacity: 0.9;
+    zoom: 1;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    text-align: left;
+    display: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    min-height: 40px;
+}
+
+.jGrowl-notification.ui-state-success,
+.jGrowl-notification .ui-widget-content .ui-state-success,
+.jGrowl-notification .ui-widget-header .ui-state-success {
+    background: #4da65d;
+    color: #fff;
+}
+
+.jGrowl-notification.ui-state-error,
+.jGrowl-notification .ui-widget-content .ui-state-error,
+.jGrowl-notification .ui-widget-header .ui-state-error {
+    background: #eb0c0c;
+    color: #fff;
+}
+
+.jGrowl-notification .jGrowl-header {
+    font-weight: bold;
+    font-size: .85em;
+}
+
+.jGrowl-notification .jGrowl-close {
+    background: transparent;
+    color: inherit;
+    border: none;
+    z-index: 99;
+    float: right;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.jGrowl-closer {
+    background: #000000;
+    opacity: 0.9;
+    zoom: 1;
+    width: 250px;
+    padding: 4px 10px;
+    margin: 10px;
+    display: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .9em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.jGrowl-closer.ui-state-success,
+.jGrowl-closer .ui-widget-content .ui-state-success,
+.jGrowl-closer .ui-widget-header .ui-state-success {
+    background: #4da65d;
+    color: #fff;
+}
+
+.jGrowl-closer.ui-state-error,
+.jGrowl-closer .ui-widget-content .ui-state-error,
+.jGrowl-closer .ui-widget-header .ui-state-error {
+    background: #eb0c0c;
+    color: #fff;
+}

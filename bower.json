@@ -1,6 +1,6 @@
 {
   "name": "ng-jGrowl",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": [
     "index.js",
     "style.css"
@@ -12,7 +12,9 @@
   "description": "Notifications for AngularJS 1.x",
   "moduleType": [],
   "keywords": [
-    "notifications", "jGrowl", "jQuery"
+    "notifications",
+    "jGrowl",
+    "jQuery"
   ],
   "license": "MIT",
   "ignore": [

@@ -1,6 +1,6 @@
 {
   "name": "ng-jGrowl",
-  "version": "0.0.2",
+  "version": "0.0.21",
   "main": [
     "index.js",
     "style.css"

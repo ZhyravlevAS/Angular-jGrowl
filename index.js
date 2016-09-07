@@ -3,10 +3,8 @@
 
   angular.module('ng.jGrowl', [])
     .provider('jGrowl', [function () {
-      var jGrowlOptions = angular.element.jGrowl.defaults;
-
       this.defaults = function (options) {
-        angular.extend(jGrowlOptions, options || {});
+        angular.extend(angular.element.jGrowl.defaults, options || {});
       };
 
       this.$get = function () {
@@ -14,11 +12,12 @@
       }
     }])
     .factory('jGrowlNotify', ['$q', function ($q) {
-      var def = $q.defer();
-      var jGrowlOptions = angular.element.jGrowl.defaults;
+      var show = function (a, options, theme) {
+        var message,
+          header,
+          executeOptions = {},
+          def = $q.defer();
 
-      var show = function (a, theme) {
-        var message, header;
         switch (a.length) {
           case 1:
             message = a[0];
@@ -33,7 +32,7 @@
             return def.promise;
         }
 
-        angular.element.jGrowl(message, {
+        angular.extend(executeOptions, (options || {}), {
           header: header,
           themeState: theme,
           close: function () {
@@ -41,26 +40,26 @@
           }
         });
 
+        angular.element.jGrowl(message, executeOptions);
+
         return def.promise;
       };
 
       return function (options) {
-        angular.extend(jGrowlOptions, options || {});
-
         this.success = function () {
-          return show(arguments, 'success')
+          return show(arguments, options, 'success')
         };
 
         this.error = function () {
-          return show(arguments, 'error')
+          return show(arguments, options, 'error')
         };
 
         this.warn = function () {
-          return show(arguments, 'warn')
+          return show(arguments, options, 'warn')
         };
 
         this.info = function () {
-          return show(arguments, 'info')
+          return show(arguments, options, 'info')
         };
       };
     }]);
